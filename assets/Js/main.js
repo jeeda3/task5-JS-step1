@@ -55,4 +55,17 @@ const displaygetproducts = async () => {
 displaycategories();
 displaygetproducts();
 
+window.onscroll=function(){
+    const nav=document.querySelector(".header");
+    const categories=document.querySelector(".categories");
+    
+   if(window.scrollY > categories.offsetTop){
+    nav.classList.add("scrollNAV");
+   }
+   else{
+    nav.classList.remove("scrollNAV");
+   }
+ 
+
+}
 
