@@ -1,43 +1,47 @@
 @import'./base.css';
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
 
-.loader-container{
-display: none;
-justify-content: center;
-text-align: center;
-height: 100vh;
-width: 100%;
-position: fixed;
-background-color: rgba(0, 0, 0, .5);
+.loader-container {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
 }
-.active{
+
+.active {
     display: flex;
 }
-.loader{
-width: 50px;
-height: 50px;
-border-radius: 50%;
-border: 5px solid #000000ea;
-border-bottom-color:transparent ;
-animation: rotate 1s infinite linear;
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #000000ea;
+    border-bottom-color: transparent;
+    animation: rotate 1s infinite linear;
 }
 
-@keyframes rotate{
-    0%{
-        transform:rotate(0deg);
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
     }
-    100%{
-        transform:rotate(360deg);
+
+    100% {
+        transform: rotate(360deg);
     }
 
 }
+
 .header {
-    background-color: rgba(255, 255,255, .8);
+    background-color: rgba(255, 255, 255, .8);
     padding: 20px 0px;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, .15);
     position: sticky;
     top: 0;
-    
+
 }
 
 .header .logo {
@@ -62,16 +66,19 @@ animation: rotate 1s infinite linear;
     color: #101928;
 
 }
-.scrollNAV{
+
+.scrollNAV {
     background-color: #fff;
-    box-shadow: 0 10px 8px rgba(0, 0, 0,.3);
+    box-shadow: 0 10px 8px rgba(0, 0, 0, .3);
 }
 
 /*--------SECTION :categories------------*/
-.categories{
+.categories {
     padding: 50px 0px;
 }
-.category , .product {
+
+.category,
+.product {
     background-color: #ffffffdd;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
     width: 25%;
@@ -79,21 +86,121 @@ animation: rotate 1s infinite linear;
     padding: 20px;
     text-align: center;
 }
-.products{
+
+.products {
     padding: 50px 0px;
-    background-color: #98a1b0;
+  
 }
-.products .prod{
-font-size: 80px;
-text-align: center;
-padding: 30px;
-font-family: "Anton SC", sans-serif;
-color: #ffffffdd;
+
+.products .prod {
+    font-size: 80px;
+    text-align: center;
+    padding: 30px;
+    font-family: "Anton SC", sans-serif;
+    color: #121010cc;
 
 }
-.product h2{
+
+.product h2 {
     margin: 5px;
 }
-.product span{
-    color:red;
+
+.product span {
+    color: red;
+}
+/*--------------------pagination---------------*/
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    display: block;
+    padding: 10px 15px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+/*-----------------------------model----------------------*/
+.my-model {
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-model .img {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+    position: relative;
+}
+
+.my-model img {
+    width: 400px;
+}
+
+.close_btn,
+.right_btn,
+.left_btn {
+    position: absolute;
+    color: #080808;
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+.close_btn {
+    right: 10px;
+    top: 10px;
+}
+
+.right_btn {
+    right: 10px;
+    top: 50%;
+}
+
+.left_btn {
+    left: 10px;
+    top: 50%;
+}
+.d_none{
+    display: none;
 }
