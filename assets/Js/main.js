@@ -49,7 +49,7 @@ const displaygetproducts = async (page=1) => {
         }).join('');
         document.querySelector(".products .row").innerHTML = result;
         pagination(page,numOfpage);
-          /*  Model();*/
+            Model();
     }
     
     catch (error) {
@@ -102,7 +102,8 @@ function Model() {
     const rightBtn = document.querySelector(".right_btn");
     const leftBtn = document.querySelector(".left_btn");
     const images =document.querySelectorAll(".image");
-    console.log(images);
+
+
     let currentIndex = 0;
     images.forEach(function (img) {
         img.addEventListener("click", function (e) {
@@ -113,6 +114,28 @@ function Model() {
         })
       
     })
+    /*--close BTN*/
+    closeBtn.addEventListener("click",function(){
+        model.classList.add("d_none");
+    })
+    /*LEFT Btn*/ 
+    leftBtn.addEventListener("click",function(){
+        currentIndex--;
+        if(currentIndex < 0){
+            currentIndex=images.length - 1;
 
+        } 
+        const src=images[currentIndex].src;
+        model.querySelector("img").setAttribute("src",src);
+    })
+    /*right Btn*/
+    rightBtn.addEventListener("click",function(){
+        currentIndex++;
+        if(currentIndex>=images.length){
+            currentIndex=0;
+        }
+        const src=images[currentIndex].src;
+        model.querySelector("img").setAttribute("src",src);
+    })
 }
 
